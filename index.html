@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glass Counter</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 4rem auto; padding: 1rem; max-width: 32rem; color: #182431; background: #f5f4ef; }
+button { font: inherit; padding: 0.8rem 1.2rem; border: 1px solid #182431; border-radius: 0.4rem; background: white; }
+output { display: block; font-size: 4rem; margin: 2rem 0; }
+</style>
+<main>
+<h1>Glass Counter</h1>
+<p>A small counter for glasses of water during a workshop.</p>
+<output id="count" aria-live="polite">0</output>
+<button id="add" type="button">Add a glass</button>
+<button id="reset" type="button">Reset</button>
+</main>
+<script>
+let glasses = 0;
+const count = document.querySelector('#count');
+document.querySelector('#add').addEventListener('click', () => { count.value = String(++glasses); });
+document.querySelector('#reset').addEventListener('click', () => { glasses = 0; count.value = '0'; });
+</script>
+</html>
